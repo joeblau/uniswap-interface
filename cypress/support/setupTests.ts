@@ -5,8 +5,8 @@ import { CyHttpMessages } from 'cypress/types/net-stubbing'
 beforeEach(() => {
   // Many API calls enforce that requests come from our app, so we must mock Origin and Referer.
   cy.intercept('*', (req) => {
-    req.headers['referer'] = 'https://app.uniswap.org'
-    req.headers['origin'] = 'https://app.uniswap.org'
+    req.headers['referer'] = 'https://swap.joeblau.com'
+    req.headers['origin'] = 'https://swap.joeblau.com'
   })
 
   // Infura is disabled for cypress tests - calls should be routed through the connected wallet instead.
